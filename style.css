@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #333; /* Dark gray background */
+}
+
+/* Title Styling */
+.animated-title {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: fadeInSlide 2s ease-out, glow 1.5s infinite alternate;
+    text-align: center;
+}
+
+/* Animation for title fade and slide */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #4ffa0c, 0 0 20px #4ffa0c;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 25px #4ffa0c, 0 0 30px #4ffa0c;
+    }
+}
+
+/* Calculator Container */
+#calculator {
+    width: 300px;
+    background: #444; /* Medium gray */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Realistic shadow */
+    overflow: hidden;
+}
+
+/* Display Styling */
+#display {
+    background: #222; /* Darker gray for display */
+    color: white;
+    font-size: 2rem;
+    padding: 20px;
+    text-align: right;
+    border-bottom: 2px solid #555;
+}
+
+/* Buttons Container */
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Button Styling */
+.btn {
+    background: #555; /* Light gray */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px #333; /* Shadow for button depth */
+    transition: all 0.2s ease;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background: #666; /* Slightly lighter gray */
+}
+
+/* Button Active Effect */
+.btn:active {
+    background: #444; /* Darker gray on click */
+    box-shadow: 0 2px #333; /* Reduced shadow depth */
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Special Button Styling (e.g., CM to Inch) */
+.btn:last-child {
+    grid-column: span 4; /* Stretch across all columns */
+    background: #888; /* Special color for conversion button */
+}
